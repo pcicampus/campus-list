@@ -1,0 +1,74 @@
+// Complete campus data
+const campusData = {
+    "Africa": {
+        "Botswana": ["Gaborone", "Orapa Lethakane", "Lobatse", "Mathanwane"],
+        "Cameroon": ["Bamenda", "Tombel", "Yaounde", "Manucam", "Douala", "Njombe", "Tiko Manukam", "Molyko Buea Cameroon", "Ebonji Tombel"],
+        // ... (other countries in Africa)
+    },
+    "Asia": {
+        "Japan": ["Japan"],
+        "Qatar": ["Doha"],
+        // ... (other countries in Asia)
+    },
+    "Europe": {
+        "Germany": ["Stuttgart"],
+        "Italy": ["Rovigo", "Musile", "Brescia"],
+        // ... (other countries in Europe)
+    },
+    "North America": {
+        "Canada": ["Toronto", "Montreal", "Brampton Mississauga", "Saskatoon", "Winnipeg"],
+        "United States of America": ["Houston", "New York", "Arlington", "Colorado", "Atlanta", "Los Angeles", "Minnesota", "Maryland", "Connecticut", "Florida", "Woodforest", "Oklahoma", "Tampa Bay", "Dallas", "Calgary"],
+        // ... (other countries in North America)
+    },
+};
+
+// Function to populate the region buttons
+function populateRegionButtons() {
+    const regionButtonsContainer = document.getElementById("regionButtons");
+
+    for (const region in campusData) {
+        const button = document.createElement("button");
+        button.textContent = region;
+        button.onclick = function () {
+            showCountries(region);
+        };
+        regionButtonsContainer.appendChild(button);
+    }
+}
+
+// Function to show countries for the selected region
+function showCountries(selectedRegion) {
+    const countryButtonsContainer = document.getElementById("countryButtons");
+    countryButtonsContainer.innerHTML = ""; // Clear previous buttons
+
+    for (const country in campusData[selectedRegion]) {
+        const button = document.createElement("button");
+        button.textContent = country;
+        button.onclick = function () {
+            showCampuses(selectedRegion, country);
+        };
+        countryButtonsContainer.appendChild(button);
+    }
+}
+
+// Function to show campuses for the selected region and country
+function showCampuses(selectedRegion, selectedCountry) {
+    const campusList = document.getElementById("campusList");
+    campusList.innerHTML = ""; // Clear previous list
+
+    const campuses = campusData[selectedRegion][selectedCountry];
+    const countryHeader = document.createElement("h3");
+    countryHeader.textContent = `${selectedCountry} Campuses`;
+    campusList.appendChild(countryHeader);
+
+    campuses.forEach(campus => {
+        const listItem = document.createElement("li");
+        listItem.textContent = campus;
+        campusList.appendChild(listItem);
+    });
+}
+
+// Populate region buttons on page load
+document.addEventListener("DOMContentLoaded", function () {
+    populateRegionButtons();
+});
