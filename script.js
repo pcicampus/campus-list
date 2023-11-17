@@ -1,4 +1,3 @@
-// Complete campus data
 const campusData = {
     "Africa": {
         "Botswana": ["Gaborone", "Orapa Lethakane", "Lobatse", "Mathanwane"],
@@ -13,6 +12,7 @@ const campusData = {
     "Europe": {
         "Germany": ["Stuttgart"],
         "Italy": ["Rovigo", "Musile", "Brescia"],
+        "United Kingdom": ["Enfield", "West London", "Leeds", "Croydon", "Harrow", "Manchester", "Berkshire", "Slough", "Northampton", "Birmingham", "Dublin", "Shirley", "North London"],
         // ... (other countries in Europe)
     },
     "North America": {
@@ -20,6 +20,7 @@ const campusData = {
         "United States of America": ["Houston", "New York", "Arlington", "Colorado", "Atlanta", "Los Angeles", "Minnesota", "Maryland", "Connecticut", "Florida", "Woodforest", "Oklahoma", "Tampa Bay", "Dallas", "Calgary"],
         // ... (other countries in North America)
     },
+    // ... (other continents)
 };
 
 // Function to populate the region buttons
@@ -41,13 +42,20 @@ function showCountries(selectedRegion) {
     const countryButtonsContainer = document.getElementById("countryButtons");
     countryButtonsContainer.innerHTML = ""; // Clear previous buttons
 
-    for (const country in campusData[selectedRegion]) {
-        const button = document.createElement("button");
-        button.textContent = country;
-        button.onclick = function () {
-            showCampuses(selectedRegion, country);
-        };
-        countryButtonsContainer.appendChild(button);
+    // Check if the selected region is a continent
+    if (campusData[selectedRegion]) {
+        for (const country in campusData[selectedRegion]) {
+            const button = document.createElement("button");
+            button.textContent = country;
+            button.onclick = function () {
+                showCampuses(selectedRegion, country);
+            };
+            countryButtonsContainer.appendChild(button);
+        }
+    } else {
+        // If the selected region is not a continent, assume it's a country
+        // and directly show campuses
+        showCampuses(selectedRegion);
     }
 }
 
@@ -56,16 +64,38 @@ function showCampuses(selectedRegion, selectedCountry) {
     const campusList = document.getElementById("campusList");
     campusList.innerHTML = ""; // Clear previous list
 
-    const campuses = campusData[selectedRegion][selectedCountry];
-    const countryHeader = document.createElement("h3");
-    countryHeader.textContent = `${selectedCountry} Campuses`;
-    campusList.appendChild(countryHeader);
+    // Check if the selected region is a continent
+    if (campusData[selectedRegion] && campusData[selectedRegion][selectedCountry]) {
+        const campuses = campusData[selectedRegion][selectedCountry];
+        const countryHeader = document.createElement("h3");
+        countryHeader.textContent = `${selectedCountry} Campuses`;
+        campusList.appendChild(countryHeader);
 
-    campuses.forEach(campus => {
-        const listItem = document.createElement("li");
-        listItem.textContent = campus;
-        campusList.appendChild(listItem);
-    });
+        campuses.forEach(campus => {
+            const listItem = document.createElement("li");
+            listItem.textContent = campus;
+            campusList.appendChild(listItem);
+        });
+    } else if (campusData[selectedRegion]) {
+        // If the selected region is a continent but no specific country is selected,
+        // assume it's a region and show campuses for all countries in that region
+        const regionHeader = document.createElement("h3");
+        regionHeader.textContent = `${selectedRegion} Campuses`;
+        campusList.appendChild(regionHeader);
+
+        for (const country in campusData[selectedRegion]) {
+            const campuses = campusData[selectedRegion][country];
+            const countryHeader = document.createElement("h4");
+            countryHeader.textContent = `${country} Campuses`;
+            campusList.appendChild(countryHeader);
+
+            campuses.forEach(campus => {
+                const listItem = document.createElement("li");
+                listItem.textContent = campus;
+                campusList.appendChild(listItem);
+            });
+        }
+    }
 }
 
 // Populate region buttons on page load
