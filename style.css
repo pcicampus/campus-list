@@ -35,6 +35,7 @@ ul {
     display: flex;
     flex-direction: column; /* Vertically position buttons */
     gap: 10px;
+    align-items: center; /* Center-align buttons horizontally */
 }
 
 button {
