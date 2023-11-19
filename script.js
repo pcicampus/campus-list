@@ -2,25 +2,36 @@ const campusData = {
     "Africa": {
         "Botswana": ["Gaborone", "Orapa Lethakane", "Lobatse", "Mathanwane"],
         "Cameroon": ["Bamenda", "Tombel", "Yaounde", "Manucam", "Douala", "Njombe", "Tiko Manukam", "Molyko Buea Cameroon", "Ebonji Tombel"],
-        // ... (other countries in Africa)
+        "Ghana": ["Gbetsile", "Accra Ghana Spintex", "Takoradi", "Kumasi", "Ashaiman-Zeru", "Adum-Kumasi", "Tema", "Gbawee-Tabora", "Hohoe", "Kotei", "Taabre Kumasi", "Ahwiaa Overseas", "Ayeduase Kumasi", "Navrongo"],
+        "Liberia": ["Monrovia"],
+        "Malawi": ["Lilongwe"],
+        "Sierra Leone": ["Madina Free Town"],
+        "South Africa": ["Polokwane", "Johannesburg", "Tembisa", "Mthatha", "Paarl", "Rustenburg", "Cape Town", "Pretoria", "Mabopane", "Gordon's Bay", "Tshwane Pretoria", "Atteridgeville", "Dube Soweto"],
+        "Uganda": ["Kampala"],
+        "Zambia": ["Lusaka", "Mpika", "Ndola", "Kitwe", "Solwezi", "Livingstone", "Chingola", "Katete", "Mazabuka", "Kaoma", "Kapiri", "Chipata", "Kabwe", "Nakonde"],
+        "Zimbabwe": ["Bulawayo", "Beitbridge", "Masvingo", "Harare"]
     },
     "Asia": {
         "Japan": ["Japan"],
         "Qatar": ["Doha"],
-        // ... (other countries in Asia)
     },
     "Europe": {
         "Germany": ["Stuttgart"],
         "Italy": ["Rovigo", "Musile", "Brescia"],
+        "Sweden": ["Orebro"],
         "United Kingdom": ["Enfield", "West London", "Leeds", "Croydon", "Harrow", "Manchester", "Berkshire", "Slough", "Northampton", "Birmingham", "Dublin", "Shirley", "North London"],
-        // ... (other countries in Europe)
     },
     "North America": {
         "Canada": ["Toronto", "Montreal", "Brampton Mississauga", "Saskatoon", "Winnipeg"],
         "United States of America": ["Houston", "New York", "Arlington", "Colorado", "Atlanta", "Los Angeles", "Minnesota", "Maryland", "Connecticut", "Florida", "Woodforest", "Oklahoma", "Tampa Bay", "Dallas", "Calgary"],
-        // ... (other countries in North America)
     },
-    // ... (other continents)
+    "Middle East": {
+        "Saudi Arabia": ["Saudi Arabia"],
+        "UAE": ["Dubai"],
+    },
+    "Oceania": {
+        "Australia": ["Sydney", "Melbourne", "Brisbane"],
+    },
 };
 
 // Function to populate the region buttons
