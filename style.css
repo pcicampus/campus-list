@@ -72,3 +72,14 @@ button:active {
         transform: translateY(-5px);
     }
 }
+
+/* Responsive design */
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
