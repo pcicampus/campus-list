@@ -1,86 +1,18 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Center-align text */
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-transform: uppercase; /* Transform header text to uppercase */
-}
-
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h2, h3, h4 {
-    color: #ffd700; /* Yellow color for headings */
-    text-transform: uppercase; /* Transform header text to uppercase */
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Region buttons styling */
-.button-container {
-    display: flex;
-    flex-direction: column; /* Vertically position buttons */
-    gap: 10px;
-    align-items: center; /* Center-align buttons horizontally */
-}
-
-button {
-    background-color: #000; /* Black button color */
-    color: #fff; /* White text color */
-    border: none;
-    padding: 10px 15px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
+}
+.region, .country {
+    margin-bottom: 20px;
+}
+.region h2, .country h2 {
+    color: #333;
+}
+.campus {
+    margin-left: 20px;
+}
+button {
+    margin: 10px;
+    padding: 10px;
     font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase; /* Transform button text to uppercase */
-}
-
-button:hover {
-    background-color: #333; /* Darker black on hover */
-}
-
-/* Bounce effect on button click */
-button:active {
-    animation: bounce 0.3s;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    main {
-        padding: 10px;
-    }
-
-    button {
-        font-size: 14px;
-    }
 }
