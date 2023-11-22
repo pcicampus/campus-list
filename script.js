@@ -56,9 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateCountries(region) {
-    const countries = Object.keys(campusData[region]);
-    populateList(countriesList, countries);
+    const countries = Object.entries(campusData[region]);
+    populateList(countriesList, countries.map(([country]) => country));
     statesList.innerHTML = ""; // Clear states list when updating countries
+  }
+
+  function updateCities(country) {
+    const cities = campusData[country] || [];
+    populateList(statesList, cities);
   }
 
   regionsContainer.addEventListener('click', function (event) {
@@ -71,8 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
   countriesContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains('country')) {
       const selectedCountry = event.target.textContent;
-      updateCampuses(selectedCountry);
+      updateCities(selectedCountry);
     }
   });
 });
-
