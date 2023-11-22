@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const countriesContainer = document.querySelector('.countries-container');
   const statesContainer = document.querySelector('.states-container');
 
-  const regionsList = document.querySelector('.regions-list');
   const countriesList = document.querySelector('.countries-list');
   const statesList = document.querySelector('.states-list');
 
