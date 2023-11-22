@@ -41,11 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
-  function populateList(list, items) {
+  function createButton(text, onClick) {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.addEventListener('click', onClick);
+    return button;
+  }
+
+  function populateList(list, items, onClick) {
     list.innerHTML = "";
     items.forEach((item) => {
       const listItem = document.createElement('li');
-      listItem.textContent = item;
+      const button = createButton(item, onClick);
+      listItem.appendChild(button);
       list.appendChild(listItem);
     });
   }
@@ -57,13 +65,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateCountries(region) {
     const countries = Object.entries(campusData[region]);
-    populateList(countriesList, countries.map(([country]) => country));
-    statesList.innerHTML = ""; // Clear states list when updating countries
+    populateList(countriesList, countries.map(([country]) => country), () => {
+      // Pass a click handler to display cities when a country is clicked
+      statesList.innerHTML = ""; // Clear states list when updating countries
+    });
   }
 
-  function updateCities(country) {
-    const cities = campusData[country] || [];
-    populateList(statesList, cities);
+  function updateCities(city) {
+    // No need to display cities as buttons since there's no further level of nesting
+    statesList.textContent = city;
   }
 
   regionsContainer.addEventListener('click', function (event) {
