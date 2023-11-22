@@ -76,6 +76,17 @@ document.addEventListener("DOMContentLoaded", () => {
         regionsContainer.appendChild(countriesContainer);
     }
 
+    attachEventListeners();
+});
+
+function createButton(text, type) {
+    const button = document.createElement("button");
+    button.classList.add("button", type);
+    button.innerText = text;
+    return button;
+}
+
+function attachEventListeners() {
     document.querySelectorAll(".region").forEach(regionButton => {
         regionButton.addEventListener("click", () => {
             // Toggle visibility of the region's countries
@@ -103,11 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
-});
-
-function createButton(text, type) {
-    const button = document.createElement("button");
-    button.classList.add("button", type);
-    button.innerText = text;
-    return button;
 }
