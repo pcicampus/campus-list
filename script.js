@@ -74,39 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         regionsContainer.appendChild(countriesContainer);
-    }
 
-    document.querySelectorAll(".region").forEach(regionButton => {
         regionButton.addEventListener("click", () => {
-            const countriesContainer = regionButton.nextElementSibling;
-
-            // Toggle visibility of the region's countries
             countriesContainer.classList.toggle("hidden");
+        });
 
-            // Hide all other regions and their countries
-            document.querySelectorAll(".container:not(.hidden)").forEach(container => {
-                if (container !== countriesContainer) {
-                    container.classList.add("hidden");
-                }
+        document.querySelectorAll(".country").forEach(countryButton => {
+            countryButton.addEventListener("click", () => {
+                const citiesContainer = countryButton.nextElementSibling;
+                citiesContainer.classList.toggle("hidden");
             });
         });
-    });
-
-    document.querySelectorAll(".country").forEach(countryButton => {
-        countryButton.addEventListener("click", () => {
-            const citiesContainer = countryButton.nextElementSibling;
-
-            // Toggle visibility of the country's cities
-            citiesContainer.classList.toggle("hidden");
-
-            // Hide all other countries and their cities
-            document.querySelectorAll(".container:not(.hidden)").forEach(container => {
-                if (container !== citiesContainer) {
-                    container.classList.add("hidden");
-                }
-            });
-        });
-    });
+    }
 });
 
 function createButton(text, type) {
