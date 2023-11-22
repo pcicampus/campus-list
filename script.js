@@ -78,12 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".region").forEach(regionButton => {
         regionButton.addEventListener("click", () => {
+            // Hide all other regions
+            document.querySelectorAll(".container:not(.hidden)").forEach(container => {
+                if (container !== regionButton.nextElementSibling) {
+                    container.classList.add("hidden");
+                }
+            });
+
             regionButton.nextElementSibling.classList.toggle("hidden");
         });
     });
 
     document.querySelectorAll(".country").forEach(countryButton => {
         countryButton.addEventListener("click", () => {
+            // Hide all other countries
+            document.querySelectorAll(".container:not(.hidden)").forEach(container => {
+                if (container !== countryButton.nextElementSibling) {
+                    container.classList.add("hidden");
+                }
+            });
+
             countryButton.nextElementSibling.classList.toggle("hidden");
         });
     });
