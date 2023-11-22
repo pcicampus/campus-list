@@ -3,31 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Churches</title>
+  <title>Campus Churches Worldwide</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
-    <h1>Campus Churches Worldwide</h1>
+    <h1 class="header-title">Campus Churches Worldwide</h1>
   </header>
 
-  <div class="container">
-    <section id="regions">
-      <h2>Regions</h2>
-      <div class="button-container" id="regions-buttons"></div>
-    </section>
+  <main class="content">
+    <div class="regions-container">
+      <h2 class="region-header">Regions</h2>
+      <ul class="regions-list">
+        <li class="region" data-region="Africa">Africa</li>
+        <li class="region" data-region="Europe">Europe</li>
+        <li class="region" data-region="Asia">Asia</li>
+        <li class="region" data-region="NorthAmerica">North America</li>
+      </ul>
+    </div>
 
-    <section id="countries">
-      <h2>Countries</h2>
-      <div class="button-container" id="countries-buttons"></div>
-    </section>
+    <div class="countries-container">
+      <h2 class="country-header">Countries</h2>
+      <ul class="countries-list"></ul>
+    </div>
 
-    <section id="cities">
-      <h2>Cities</h2>
-      <ul id="cities-list"></ul>
-    </section>
-  </div>
+    <div class="states-container">
+      <h2 class="state-header">States/Cities</h2>
+      <ul class="states-list"></ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Interactive Campus Website</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
