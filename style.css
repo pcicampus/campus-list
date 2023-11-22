@@ -1,90 +1,38 @@
 body {
-  background-color: #000;
-  font-family: Montserrat, sans-serif;
-  color: #fff;
-  text-align: center;
+    background-color: #333;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-  font-size: 24px;
-  font-weight: bold;
-  padding: 20px;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
 }
 
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.regions-container,
-.countries-container,
-.states-container {
-  margin-bottom: 20px;
+.region {
+    background-color: #007BFF;
+    color: #fff;
 }
 
-.region-header,
-.country-header,
-.state-header {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 20px;
-}
-
-.regions-list,
-.countries-list,
-.states-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.region,
-.country,
-.state {
-  display: block;
-  padding: 10px;
-  background-color: #222;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.region:hover,
-.country:hover,
-.state:hover {
-  background-color: #444;
-}
-
-@media only screen and (max-width: 768px) {
-  .region-header,
-  .country-header,
-  .state-header {
-    font-size: 18px;
-  }
-
-  .region,
-  .country,
-  .state {
-    padding: 5px;
-  }
-}
-
-/* Added styles for interactive buttons */
 .country {
-  margin: 5px;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    background: linear-gradient(to right, #FF66B2, #FF3366);
+    color: #fff;
 }
 
-.country:hover {
-  background-color: #555;
-}
-
-.country:active {
-  transform: scale(0.95);
+.city {
+    background: linear-gradient(to right, #fff, #f1f1f1);
+    color: #333;
 }
