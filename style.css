@@ -70,3 +70,21 @@ main {
     padding: 5px;
   }
 }
+
+/* Added styles for interactive buttons */
+.country {
+  margin: 5px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.country:hover {
+  background-color: #555;
+}
+
+.country:active {
+  transform: scale(0.95);
+}
