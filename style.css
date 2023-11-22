@@ -1,5 +1,6 @@
+/* styles.css */
 body {
-    background-color: #000000;
+    background-color: #1a1a1a;
     color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,18 +23,19 @@ body {
     cursor: pointer;
 }
 
-.region {
-    background-color: #3498db;
-}
-
-.country {
+.region, .country {
     background: linear-gradient(to right, #ff6ec4, #7873f5);
 }
 
 .city {
-    background: linear-gradient(to right, #ffffff, #3e3c3c);
+    background: linear-gradient(to right, #000000, #211a1a);
 }
 
 .hidden {
     display: none;
+}
+
+.column {
+    flex: 1;
+    margin: 5px;
 }
