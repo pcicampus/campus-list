@@ -78,27 +78,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".region").forEach(regionButton => {
         regionButton.addEventListener("click", () => {
-            // Hide all other regions
+            // Toggle visibility of the region's countries
+            regionButton.nextElementSibling.classList.toggle("hidden");
+
+            // Hide all other regions and their countries
             document.querySelectorAll(".container:not(.hidden)").forEach(container => {
                 if (container !== regionButton.nextElementSibling) {
                     container.classList.add("hidden");
                 }
             });
-
-            regionButton.nextElementSibling.classList.toggle("hidden");
         });
     });
 
     document.querySelectorAll(".country").forEach(countryButton => {
         countryButton.addEventListener("click", () => {
-            // Hide all other countries
+            // Toggle visibility of the country's cities
+            countryButton.nextElementSibling.classList.toggle("hidden");
+
+            // Hide all other countries and their cities
             document.querySelectorAll(".container:not(.hidden)").forEach(container => {
                 if (container !== countryButton.nextElementSibling) {
                     container.classList.add("hidden");
                 }
             });
-
-            countryButton.nextElementSibling.classList.toggle("hidden");
         });
     });
 });
