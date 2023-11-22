@@ -76,25 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
         regionsContainer.appendChild(countriesContainer);
     }
 
-    attachEventListeners();
-});
-
-function createButton(text, type) {
-    const button = document.createElement("button");
-    button.classList.add("button", type);
-    button.innerText = text;
-    return button;
-}
-
-function attachEventListeners() {
     document.querySelectorAll(".region").forEach(regionButton => {
         regionButton.addEventListener("click", () => {
+            const countriesContainer = regionButton.nextElementSibling;
+
             // Toggle visibility of the region's countries
-            regionButton.nextElementSibling.classList.toggle("hidden");
+            countriesContainer.classList.toggle("hidden");
 
             // Hide all other regions and their countries
             document.querySelectorAll(".container:not(.hidden)").forEach(container => {
-                if (container !== regionButton.nextElementSibling) {
+                if (container !== countriesContainer) {
                     container.classList.add("hidden");
                 }
             });
@@ -103,15 +94,24 @@ function attachEventListeners() {
 
     document.querySelectorAll(".country").forEach(countryButton => {
         countryButton.addEventListener("click", () => {
+            const citiesContainer = countryButton.nextElementSibling;
+
             // Toggle visibility of the country's cities
-            countryButton.nextElementSibling.classList.toggle("hidden");
+            citiesContainer.classList.toggle("hidden");
 
             // Hide all other countries and their cities
             document.querySelectorAll(".container:not(.hidden)").forEach(container => {
-                if (container !== countryButton.nextElementSibling) {
+                if (container !== citiesContainer) {
                     container.classList.add("hidden");
                 }
             });
         });
     });
+});
+
+function createButton(text, type) {
+    const button = document.createElement("button");
+    button.classList.add("button", type);
+    button.innerText = text;
+    return button;
 }
