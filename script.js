@@ -125,8 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const detailsContainer = document.getElementById("detailsContainer");
     const coordinatorDetails = document.getElementById("coordinatorDetails");
 
-    // Create a dropdown for regions
-    const regionDropdown = createDropdown(Object.keys(data), "region");
+    // Create a dropdown for regions with a default option
+    const regionDropdown = createDropdown(["Select Region", ...Object.keys(data)], "region");
     regionsContainer.appendChild(regionDropdown);
 
     // Event listener for region dropdown
@@ -134,6 +134,11 @@ document.addEventListener("DOMContentLoaded", () => {
         resetDetails();
 
         const selectedRegion = regionDropdown.value;
+        if (selectedRegion === "Select Region") {
+            // Do nothing if the default option is selected
+            return;
+        }
+
         const countries = data[selectedRegion];
 
         // Show countries container and update buttons
