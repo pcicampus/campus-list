@@ -53,3 +53,17 @@ h2 {
 #coordinatorDetails {
     text-align: center;
 }
+/* styles.css */
+/* ... (Previous styles) */
+
+.button.region {
+    background-color: rgb(1, 1, 73); /* Region color */
+}
+
+.button.country {
+    background: linear-gradient(to right, rgb(157, 0, 26), rgb(157, 0, 26)); /* Gradient for countries */
+}
+
+.button.city {
+    background: linear-gradient(to right, rgb(63, 29, 29), rgb(42, 23, 23)); /* Gradient for cities */
+}
