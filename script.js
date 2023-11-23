@@ -216,3 +216,18 @@ function resetDetails() {
     // Hide details container
     detailsContainer.classList.add("hidden");
 }
+function createButton(text, type) {
+    const button = document.createElement("button");
+
+    // Assign different classes based on the type
+    if (type === "region") {
+        button.classList.add("button", "region");
+    } else if (type === "country") {
+        button.classList.add("button", "country");
+    } else if (type === "city") {
+        button.classList.add("button", "city");
+    }
+
+    button.innerText = text;
+    return button;
+}
