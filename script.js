@@ -277,9 +277,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         // Display coordinator details
                         coordinatorDetails.innerHTML = `
-                            <p>Coordinator: ${details.coordinator}</p>
-                            <p>Phone: ${details.phone}</p>
-                            <p>Address: ${details.address}</p>
+                            <p style="text-align: center;">Coordinator: ${details.coordinator}</p>
+                            <p style="text-align: center;">Phone: ${details.phone}</p>
+                            <p style="text-align: center;">Address: ${details.address}</p>
                         `;
 
                         // Show details container
